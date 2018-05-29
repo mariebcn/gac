@@ -14,7 +14,7 @@ class mobileTraffic {
     private $arrMsgError = array();
 
     /**
-     * Import file sending by the user
+     * Import file sent by the user
      * 
      * @param file $file
      * 
@@ -34,7 +34,7 @@ class mobileTraffic {
             $nbrow = 0;
 
             $mobileTrafficModel = new mobileTrafficModel();
-            //clean table before inserted new file
+            //clean table before inserting new file
             $mobileTrafficModel->deleteAll();
 
             foreach ($rows as $row) {
@@ -68,8 +68,8 @@ class mobileTraffic {
         }
 
         echo '<pre>-------------------------- End of import file with ' . $nbrow . ' rows. --------------------------</pre>';
-        echo '<pre>-------------------------- Number rows inserted on database : ' . $countInsert . '. --------------------------</pre>';
-        echo '<pre>-------------------------- Number rows with wrong data : ' . $countError . '. --------------------------</pre>';
+        echo '<pre>-------------------------- Number of rows inserted in database : ' . $countInsert . '. --------------------------</pre>';
+        echo '<pre>-------------------------- Number of rows with wrong data : ' . $countError . '. --------------------------</pre>';
 
         return true;
     }
@@ -104,7 +104,7 @@ class mobileTraffic {
     }
 
     /**
-     * function to valid the data of the files
+     * function to validate data of the file
      * 
      * @param array $arrayToCheck row of the file
      * 
@@ -114,7 +114,7 @@ class mobileTraffic {
         if (isset($arrayToCheck) && !empty($arrayToCheck)) {
             //check number values
             if (count($arrayToCheck) == COUNT_VALUES) {
-                //check values needed to put on database
+                //check values needed to put in database
                 
                 //Check subscriber
                 if (!intval($arrayToCheck[2])) {
